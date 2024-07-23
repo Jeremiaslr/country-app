@@ -1,6 +1,7 @@
 <div
-*ngIf="countries.length === 0; else table"
-class="alert alert-warning text-center">
+  *ngIf="countries.length === 0; else table"
+  class="alert alert-warning text-center"
+>
   There are no countries to show
 </div>
 
@@ -27,22 +28,21 @@ class="alert alert-warning text-center">
           {{ country.flag }}
         </td>
         <td>
-          <img [src]="country.flags.svg" [alt]="country.name.common">
+          <img [src]="country.flags.svg" [alt]="country.name.common" />
         </td>
         <td>
           {{ country.name.common }}
         </td>
         <td>
-          {{ country.capital}}
+          {{ country.capital }}
         </td>
         <td>
           {{ country.population | number }}
         </td>
         <td>
-          <a href="#">See More</a>
+          <a [routerLink]="[ '/countries/by', country.cca3]">Info</a>
         </td>
       </tr>
     </tbody>
-
   </table>
 </ng-template>
